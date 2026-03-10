@@ -5,9 +5,11 @@ import Signup from "./pages/Auth/Signup";
 import Home from "./pages/Dashboard/Home";
 import Income from "./pages/Dashboard/Income"
 import Expence from "./pages/Dashboard/Expence"
+import UserProvider from './context/UserContext';
 
 function App() {
   return (
+    <UserProvider>
     <div>
     
       <BrowserRouter>
@@ -20,7 +22,10 @@ function App() {
           <Route path='/expence' element={<Expence />} />
         </Routes>
       </BrowserRouter>
+
     </div>
+    </UserProvider>
+
   )
 }
 
