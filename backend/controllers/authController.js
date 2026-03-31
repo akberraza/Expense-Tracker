@@ -84,7 +84,7 @@ exports.loginUser = async(req, res) => {
 // getUserInfo User
 exports.getUserInfo = async(req, res) => {
      try {
-        const user = await User.findById(req.user._id).select("-password");
+        const user = await User.findById(req.user.id).select("-password");
 
         if(!user){
             return res.status(400).json({
@@ -96,7 +96,7 @@ exports.getUserInfo = async(req, res) => {
 
      } catch (err) {
         res.status(400).json({
-            message: err.message
+            message: "Error Registering User", error: err.message
         })
      }
 }

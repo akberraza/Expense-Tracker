@@ -41,7 +41,7 @@ axiosInstance.interceptors.response.use(
          }else if(error.code === 'ECONNABORTED'){
             console.error("Request timeout. please try again.");
          }
-          return Promise.rejecct(error);
+          return Promise.reject(error);
         }
 );
 
